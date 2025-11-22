@@ -94,3 +94,50 @@ The project is deployed as an interactive web application using **Streamlit**, a
 ---
 
 ## 📁 Repository Structure
+
+The project directory is organized to separate the core ML development from the deployment artifacts.
+
+| File/Directory | Description |
+| :--- | :--- |
+| `Sentiment_Analysis.ipynb` | **Jupyter Notebook** containing the complete data loading, preprocessing, feature extraction, model training, evaluation, and selection steps. |
+| `app.py` | The main **Streamlit script** used to create the interactive web application for real-time predictions. |
+| `sentiment_model.pkl` | The **serialized machine learning model** (Logistic Regression) saved after training. |
+| `tfidf_vectorizer.pkl` | The **saved TF-IDF vectorizer object**, essential for transforming new input text into the numerical format expected by the model. |
+| `requirements.txt` | Lists all necessary **Python libraries and dependencies** required to run the project. |
+| `README.md` | This **project documentation file**. |
+
+---
+
+## 💡 Business Use Cases
+
+This Sentiment Analysis solution provides significant value across various business functions:
+
+* **Automated Review Monitoring:** **Instantly flag** highly negative reviews that require immediate customer service intervention.
+* **Product Improvement Insights:** Identify recurring themes or features associated with negative feedback (Customer feedback mining) to **guide engineering and product development**.
+* **Real-time Moderation Systems:** Implement a filter to **automatically moderate** abusive, spam, or highly inappropriate content before it goes live.
+* **Brand Reputation Tracking:** Monitor the overall **sentiment trend** of the brand's products over specified time periods.
+* **Product Rating Improvement:** Understand the core drivers of low ratings to prioritize changes that will have the biggest impact.
+
+---
+
+## ✨ Future Enhancements
+
+The following features are planned to expand the scope and robustness of the project:
+
+1.  **Add Neutral Class (3-Class Sentiment):** Expand the current binary classification (Positive/Negative) to include a **Neutral** category for more granular analysis.
+2.  **Advanced Deployment:** Move the application from local hosting to public cloud platforms like **Render**, **HuggingFace Spaces**, or **AWS/GCP** for wider accessibility.
+3.  **Integrate BERT / Transformer Models:** Replace the traditional ML pipeline with **Deep Learning** models (e.g., BERT, RoBERTa) to leverage contextual embeddings for higher accuracy.
+4.  **Build Dashboard Insights & Analytics:** Develop an interactive front-end dashboard to visualize sentiment distribution, keyword analysis, and model confidence scores.
+
+---
+
+## 👤 Author
+
+**Rohit Vastani**
+
+* **Role:** AI & ML Student | Data Science & NLP Enthusiast
+* **Location:** 📍 India
+* **LinkedIn:** [https://www.linkedin.com/in/rohit-vastani-3a9a18301/?utm_source=share](https://www.linkedin.com/in/rohit-vastani-3a9a18301/?utm_source=share)
+* **GitHub:** [https://github.com/Rohit-8626](https://github.com/Rohit-8626)
+
+⭐ **If you found this useful, consider giving the repository a star!**
