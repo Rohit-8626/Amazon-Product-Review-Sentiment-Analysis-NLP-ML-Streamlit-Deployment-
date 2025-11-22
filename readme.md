@@ -38,6 +38,7 @@ Columns:
 Column	Description
 Text	Review content
 Label	1 = Positive, 0 = Negative
+
 🧠 Approach
 Step	Description
 Data Loading	Read dataset & inspect distribution
@@ -46,6 +47,7 @@ Feature Extraction	TF-IDF Vectorization (10k features, 1–2 n-grams)
 Model Training	Logistic Regression, Multinomial Naive Bayes
 Evaluation	Accuracy, Precision, Recall, F1, Confusion Matrix
 Deployment	Streamlit app for real-time sentiment predictions
+
 📊 Model Performance
 Model	Accuracy	F1-Score
 Logistic Regression	0.89	0.88
@@ -54,6 +56,7 @@ Confusion Matrix (Logistic Regression)
 	Pred 0	Pred 1
 Actual 0	587	366
 Actual 1	91	2956
+
 🚀 Deployment
 
 This project includes a working Streamlit application that predicts sentiment from any user-typed review.
