@@ -89,7 +89,7 @@ The project is deployed as an interactive web application using **Streamlit**, a
 
 ### 🖥 Application Preview
 
-
+* **Streamlit Link: ** [images/Application_Preview.png](images/Application_Preview.png)
 
 ---
 
