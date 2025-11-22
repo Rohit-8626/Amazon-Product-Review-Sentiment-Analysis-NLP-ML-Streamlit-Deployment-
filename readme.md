@@ -1,112 +1,96 @@
-📌 Amazon Product Review Sentiment Analysis (NLP + ML + Streamlit)
-🔍 Project Overview
+# 📌 Amazon Product Review Sentiment Analysis (NLP + ML + Streamlit)
 
-This project performs Sentiment Analysis on Amazon product reviews using Natural Language Processing (NLP) and Machine Learning.
-The system classifies customer feedback into Positive or Negative, enabling businesses to quickly understand product satisfaction without manual review.
+## 💡 Project Overview
 
-The solution includes:
+This project implements **Sentiment Analysis** on Amazon product reviews using a classic **Natural Language Processing (NLP)** and **Machine Learning (ML)** pipeline. The system is designed to automatically classify customer feedback into **Positive (1)** or **Negative (0)** sentiment, providing businesses with a fast, scalable, and automated way to understand product satisfaction without manual review.
 
-Full NLP preprocessing pipeline
+---
 
-TF-IDF feature extraction
+## 🎯 Problem Statement
 
-Model comparison & evaluation
+E-commerce platforms generate an immense volume of customer feedback daily. Manually reading and classifying the sentiment of thousands of text reviews is time-consuming, expensive, and often inconsistent due to human error.
 
-Real-time web app using Streamlit
+This project addresses this challenge by:
 
-🎯 Problem Statement
+* **Automatically detecting** the underlying customer opinion from raw review text.
+* Providing **fast and scalable** sentiment classification.
+* Generating **actionable insights** for product improvement and enhancing customer experience.
 
-E-commerce platforms receive thousands of text reviews daily.
-Manually analyzing sentiment is time-consuming, expensive, and prone to human error.
+---
 
-This project solves the issue by:
+## 🧠 Technical Approach
 
-Automatically detecting customer opinion from review text
+The solution follows a standard supervised machine learning workflow, focusing on effective text preprocessing and feature engineering.
 
-Providing fast & scalable sentiment classification
+### Approach Steps
 
-Supporting product improvement and customer experience insights
+| Step | Description |
+| :--- | :--- |
+| **Data Loading** | Reading the dataset and inspecting class distribution. |
+| **Text Cleaning** | Applying **Lowercasing**, removal of **punctuation**, eliminating **stopwords**, and **lemmatization** to normalize the text data. |
+| **Feature Extraction** | Using **TF-IDF Vectorization** (with 10k features and 1–2 n-grams) to convert text into numerical feature vectors. |
+| **Model Training** | Training and evaluating two classification models: **Logistic Regression** and **Multinomial Naive Bayes**. |
+| **Evaluation** | Measuring performance using **Accuracy**, **Precision**, **Recall**, **F1-Score**, and analyzing the **Confusion Matrix**. |
+| **Deployment** | Creating a real-time, interactive web application using **Streamlit**. |
 
-📂 Dataset
+### 📂 Dataset
 
-Amazon Product Reviews Dataset
+* **Source:** Amazon Product Reviews Dataset
+* **Size:** Approximately 20,000 reviews
+* **Columns:**
+    | Column | Description |
+    | :--- | :--- |
+    | `Text` | Review content |
+    | `Label` | **1** = Positive, **0** = Negative |
 
-Size: ~20,000 reviews
+---
 
-Columns:
+## 📊 Model Performance
 
-Column	Description
-Text	Review content
-Label	1 = Positive, 0 = Negative
+Two models were trained and evaluated on the dataset. **Logistic Regression** demonstrated superior performance.
 
-🧠 Approach
-Step	Description
-Data Loading	Read dataset & inspect distribution
-Text Cleaning	Lowercasing, punctuation removal, stopwords, lemmatization
-Feature Extraction	TF-IDF Vectorization (10k features, 1–2 n-grams)
-Model Training	Logistic Regression, Multinomial Naive Bayes
-Evaluation	Accuracy, Precision, Recall, F1, Confusion Matrix
-Deployment	Streamlit app for real-time sentiment predictions
+### Model Metrics
 
-📊 Model Performance
-Model	Accuracy	F1-Score
-Logistic Regression	0.89	0.88
-Multinomial Naive Bayes	0.86	0.86
-Confusion Matrix (Logistic Regression)
-	Pred 0	Pred 1
-Actual 0	587	366
-Actual 1	91	2956
+| Model | Accuracy | F1-Score |
+| :--- | :--- | :--- |
+| **Logistic Regression** | **0.89** | **0.88** |
+| Multinomial Naive Bayes | 0.86 | 0.86 |
 
-🚀 Deployment
+### Confusion Matrix (Logistic Regression)
 
-This project includes a working Streamlit application that predicts sentiment from any user-typed review.
+| | **Predicted 0 (Negative)** | **Predicted 1 (Positive)** |
+| :--- | :--- | :--- |
+| **Actual 0 (Negative)** | 587 (True Negatives) | 366 (False Positives) |
+| **Actual 1 (Positive)** | 91 (False Negatives) | 2956 (True Positives) |
 
-Run Locally
-pip install -r requirements.txt
-streamlit run app.py
+---
 
-🖥 Application Preview
+## 🚀 Deployment (Streamlit Web App)
 
-(Add streamlit screenshots here)
+The project is deployed as an interactive web application using **Streamlit**, allowing users to input a review and receive a real-time sentiment prediction.
 
-📁 Repository Structure
-├── Sentiment_Analysis.ipynb       # Training + evaluation notebook
-├── app.py                         # Streamlit web app
-├── sentiment_model.pkl            # Saved ML model
-├── tfidf_vectorizer.pkl           # Saved TF-IDF vectorizer
-├── requirements.txt               # Dependencies
-└── README.md                      # Project documentation
+### Run Locally
 
-💡 Business Use Cases
+1.  **Clone the repository:**
+    ```bash
+    git clone [Your GitHub Repo URL]
+    cd [Your Repo Directory]
+    ```
 
-Automated review monitoring
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Product rating improvement insights
+3.  **Run the Streamlit application:**
+    ```bash
+    streamlit run app.py
+    ```
 
-Customer feedback mining
+### 🖥 Application Preview
 
-Real-time moderation systems
 
-Brand reputation tracking
 
-✨ Future Enhancements
+---
 
-Add Neutral class (3-class sentiment)
-
-Deploy on Render / HuggingFace / AWS
-
-Integrate BERT / Transformer models
-
-Build dashboard insights & analytics
-
-👤 Author
-
-Rohit Vastani
-AI & ML Student | Data Science & NLP Enthusiast
-📍 India
-
-🔗 LinkedIn: https://www.linkedin.com/in/rohit-vastani-3a9a18301/?utm_source=share
-
-🔗 GitHub: https://github.com/Rohit-8626
-
-⭐ If you found this useful, consider giving the repository a star!
+## 📁 Repository Structure
