@@ -1,9 +1,14 @@
 import streamlit as st
 import re
+import nltk
 import joblib
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt')
 
 model = joblib.load('log_reg_model.pkl')
 tfidf = joblib.load('tfidf_vectorizer.pkl')
@@ -30,4 +35,5 @@ if st.button("Analyze"):
         cleaned = clean_text(review)
         vec = tfidf.transform([cleaned])
         pred = model.predict(vec)
+
         st.subheader("Sentiment : " + ("Positive 😊" if pred == 1 else "Negative 😡"))
