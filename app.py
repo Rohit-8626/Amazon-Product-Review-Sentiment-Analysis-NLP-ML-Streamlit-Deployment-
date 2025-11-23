@@ -6,9 +6,25 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('punkt')
+@st.cache_resource
+def download_nltk_resources():
+
+   try:
+        nltk.data.find('corpora/stopwords')
+    except nltk.downloader.DownloadError:
+        nltk.download('stopwords')
+
+    try:
+        nltk.data.find('corpora/wordnet')
+    except nltk.downloader.DownloadError:
+        nltk.download('wordnet')
+
+    try:
+        nltk.data.find('tokenizers/punkt')
+    except nltk.downloader.DownloadError:
+        nltk.download('punkt')
+
+download_nltk_resources()
 
 model = joblib.load('log_reg_model.pkl')
 tfidf = joblib.load('tfidf_vectorizer.pkl')
@@ -37,3 +53,4 @@ if st.button("Analyze"):
         pred = model.predict(vec)
 
         st.subheader("Sentiment : " + ("Positive 😊" if pred == 1 else "Negative 😡"))
+
