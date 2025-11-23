@@ -11,17 +11,17 @@ def download_nltk_resources():
 
    try:
         nltk.data.find('corpora/stopwords')
-    except nltk.downloader.DownloadError:
+   except nltk.downloader.DownloadError:
         nltk.download('stopwords')
 
-    try:
+   try:
         nltk.data.find('corpora/wordnet')
-    except nltk.downloader.DownloadError:
+   except nltk.downloader.DownloadError:
         nltk.download('wordnet')
 
-    try:
+   try:
         nltk.data.find('tokenizers/punkt')
-    except nltk.downloader.DownloadError:
+   except nltk.downloader.DownloadError:
         nltk.download('punkt')
 
 download_nltk_resources()
@@ -53,4 +53,5 @@ if st.button("Analyze"):
         pred = model.predict(vec)
 
         st.subheader("Sentiment : " + ("Positive 😊" if pred == 1 else "Negative 😡"))
+
 
