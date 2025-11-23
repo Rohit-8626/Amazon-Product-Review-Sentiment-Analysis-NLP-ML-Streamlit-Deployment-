@@ -28,13 +28,14 @@ review = st.text_area('Enter Product Review : ')
 
 if st.button("Analyze"):
     if not review.strip():
-        st.warning("Please first enter the review")
+        st.warning("Teri maa ki chuut BSDK Pehle Review To Daal ")
     else:
         cleaned = clean_text(review)
         vec = tfidf.transform([cleaned])
         pred = model.predict(vec)
 
         st.subheader("Sentiment : " + ("Positive 😊" if pred == 1 else "Negative 😡"))
+
 
 
 
