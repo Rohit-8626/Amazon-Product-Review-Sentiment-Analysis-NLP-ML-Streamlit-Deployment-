@@ -10,7 +10,6 @@ nltk.download('stopwords', quiet=True)
 nltk.download('wordnet', quiet=True)
 nltk.download('punkt', quiet=True)
 
-download_nltk_resources()
 
 model = joblib.load('log_reg_model.pkl')
 tfidf = joblib.load('tfidf_vectorizer.pkl')
@@ -39,6 +38,7 @@ if st.button("Analyze"):
         pred = model.predict(vec)
 
         st.subheader("Sentiment : " + ("Positive 😊" if pred == 1 else "Negative 😡"))
+
 
 
 
