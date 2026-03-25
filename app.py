@@ -6,8 +6,6 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-stop_words = set(stopwords.words('english'))
-
 model = joblib.load('log_reg_model.pkl')
 tfidf = joblib.load('tfidf_vectorizer.pkl')
 
